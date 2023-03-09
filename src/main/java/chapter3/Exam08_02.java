@@ -1,3 +1,5 @@
+package chapter3;
+
 public class Exam08_02 {
     public static void main(String[] args) {
         int a,b;

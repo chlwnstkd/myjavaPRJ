@@ -1,3 +1,5 @@
+package chapter3;
+
 public class Exam08_04 {
     public static void main(String[] args) {
         String str1 = "IT CookBook입니다.";

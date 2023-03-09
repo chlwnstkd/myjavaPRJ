@@ -1,3 +1,5 @@
+package chapter3;
+
 public class Exam04 {
     public static void main(String[] args) {
         System.out.printf("%d / %d = %f \n", 100, 200, 0.5);

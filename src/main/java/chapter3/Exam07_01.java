@@ -1,3 +1,5 @@
+package chapter3;
+
 public class Exam07_01 {
     public static void main(String[] args) {
         int a=100, b=200;

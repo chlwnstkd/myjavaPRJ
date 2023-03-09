@@ -1,3 +1,5 @@
+package chapter3;
+
 public class Exam08_01 {
     public static void main(String[] args) {
         char a,b,c,d,e;

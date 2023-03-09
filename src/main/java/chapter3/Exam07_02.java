@@ -1,3 +1,5 @@
+package chapter3;
+
 public class Exam07_02 {
     public static void main(String[] args) {
         float a=0.1234567890123456789012345f;
