@@ -1,6 +1,6 @@
 package baekjoon_4;
 import java.util.Scanner;
-public class Main {
+public class Ex_10810 {
     public static void main (String[] args) {
         Scanner s = new Scanner(System.in);
         int [] arr = new int [s.nextInt()];

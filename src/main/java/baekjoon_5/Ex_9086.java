@@ -1,6 +1,6 @@
-package baekjoon_4;
+package baekjoon_5;
 import java.util.Scanner;
-public class Ex_9086 {i
+public class Ex_9086 {
 
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
@@ -15,4 +15,4 @@ public class Ex_9086 {i
             }
         }
     }
-}
+
