@@ -1,7 +1,9 @@
 package chapter9;
 import java.util.Scanner;
 public class Ex09_11 {
+
     static int coffee_machine(int botton) {
+
         System.out.printf("\n#1.(자동으로) 뜨거운 물을 준비한다\n");
         System.out.printf("#w.(자동으로) 종이겁을 준비한다\n");
 
@@ -23,10 +25,13 @@ public class Ex09_11 {
         System.out.printf("#4.(자동으로) 물을 붓는다.\n");
         System.out.printf("#5.(자동으로) 스푼으로 저어서 녹인다.\n\n");
 
+
+
         return 0;
     }
 
     public static void main(String[] args) {
+
         Scanner s = new Scanner(System.in);
         int coffee;
         int ret;
@@ -39,4 +44,5 @@ public class Ex09_11 {
         System.out.printf("손님~ 커피 여기 있습니다.\n");
     }
 }
+
 
