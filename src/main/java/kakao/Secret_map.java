@@ -2,7 +2,7 @@ package kakao;
 
 import java.util.Arrays;
 import java.util.Scanner;
-public class secret_map {
+public class Secret_map {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();

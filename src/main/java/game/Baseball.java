@@ -1,7 +1,7 @@
 package game;
 import java.util.Scanner;
 import java.util.Arrays;
-public class baseball {
+public class Baseball {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int correct[] = new int[3];

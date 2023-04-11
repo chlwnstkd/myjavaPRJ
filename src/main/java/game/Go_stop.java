@@ -1,6 +1,6 @@
 package game;
 import java.util.Scanner;
-public class go_stop {
+public class Go_stop {
     // 1부터 30중 랜덤으로 숫자가 정해진다
     // 0부터 시작하여 go를 하면 1이 증가한다
     // stop을 하면 턴이 넘어가게된다.
