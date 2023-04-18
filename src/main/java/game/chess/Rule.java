@@ -111,7 +111,7 @@ public class Rule {
                     big = d;
                     small = b;
                 }
-                for (int i = small; i < big; i++) {
+                for (int i = big; i > small; i--) {
                     if (str[a][i].equals(""))
                         count++;
                 }
