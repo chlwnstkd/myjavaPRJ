@@ -21,7 +21,7 @@ public class peace {
                     }
                 } else if (b == d && a - 1 == c) {
                     str[a][b] = "";
-                    if (d == 1) {
+                    if (c == 1) {
                         str[c][d] = color + "Queen";
                         return success;
                     } else {
@@ -30,7 +30,7 @@ public class peace {
                     }
                 } else if (str[c][d].contains("B_") && ((b + 1 == d || b - 1 == d) && a - 1 == c)) {
                     str[a][b] = "";
-                    if (d == 1) {
+                    if (c == 1) {
                         str[c][d] = color + "Queen";
                         return success;
                     } else {
@@ -53,23 +53,24 @@ public class peace {
                     }
                 } else if (b == d && a + 1 == c) {
                     str[a][b] = "";
-                    if (d == 8) {
+                    if (c == 8) {
                         str[c][d] = color + "Queen";
                         return success;
                     } else {
                         str[c][d] = color + "Pawn";
                         return success;
                     }
-                } else if (str[c][d].contains("B_") && ((b + 1 == d || b - 1 == d) && a - 1 == c)) {
+                } else if (str[c][d].contains("W_") && ((b + 1 == d || b - 1 == d) && a + 1 == c)) {
                     str[a][b] = "";
-                    if (d == 8) {
+                    if (c == 8) {
                         str[c][d] = color + "Queen";
                         return success;
                     } else {
                         str[c][d] = color + "Pawn";
                         return success;
+
                     }
-                } else {
+                }else {
                     System.out.println("잘못된 위치입니다. 다시 두세요");
                     return fail;
                 }
@@ -175,7 +176,6 @@ public class peace {
         if (str[a][b].contains("Queen")) {
             if ((a == c || b == d) || (Math.abs(c - a) == Math.abs(d - b))) {
                 if (r.straight(str, a, b, c, d, i) == Math.abs(a - c)) {
-
                     str[a][b] = "";
                     str[c][d] = color + "Queen";
                     return success;
