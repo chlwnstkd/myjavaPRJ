@@ -11,7 +11,7 @@ public class peace {
         if (str[a][b].contains("Pawn")) {
             if (i % 2 == 0) {
                 if (a == 7 && (b == d && a - 2 == c)) {
-                    if (r.straight(str, a, b, c, d, i) == Math.abs(a - c)) {
+                    if (r.straight(str, a, b, c, d) == Math.abs(a - c)) {
                         str[a][b] = "";
                         str[c][d] = color + "Pawn";
                         return success;
@@ -43,7 +43,7 @@ public class peace {
                 }
             } else {
                 if (a == 2 && (b == d && a + 2 == c)) {
-                    if (r.straight(str, a, b, c, d, i) == Math.abs(a - c)) {
+                    if (r.straight(str, a, b, c, d) == Math.abs(a - c)) {
                         str[a][b] = "";
                         str[c][d] = color + "Pawn";
                         return success;
@@ -70,7 +70,7 @@ public class peace {
                         return success;
 
                     }
-                }else {
+                } else {
                     System.out.println("잘못된 위치입니다. 다시 두세요");
                     return fail;
                 }
@@ -81,17 +81,17 @@ public class peace {
     }
 
 
-    public int rook(String str[][], String color, int a, int b, int c, int d, int i) {
+    public int rook(String str[][], String color, int a, int b, int c, int d) {
 
         if (str[a][b].contains("Rook")) {
             if (a == c) {
-                if (r.straight(str, a, b, c, d, i) == Math.abs(b - d)) {
+                if (r.straight(str, a, b, c, d) == Math.abs(b - d)) {
                     str[a][b] = "";
                     str[c][d] = color + "Rook";
                     return success;
                 }
             } else if (b == d) {
-                if (r.straight(str, a, b, c, d, i) == Math.abs(a - c)) {
+                if (r.straight(str, a, b, c, d) == Math.abs(a - c)) {
                     str[a][b] = "";
                     str[c][d] = color + "Rook";
                     return success;
@@ -107,7 +107,7 @@ public class peace {
     }
 
 
-    public int bishop(String str[][], String color, int a, int b, int c, int d, int i) {
+    public int bishop(String str[][], String color, int a, int b, int c, int d) {
 
         if (str[a][b].contains("Bishop")) {
             if (r.diagonal(str, a, b, c, d) == Math.abs(a - c)) {
@@ -171,15 +171,11 @@ public class peace {
             return success;
     }
 
-    public int queen(String str[][], String color, int a, int b, int c, int d, int i) {
+    public int queen(String str[][], String color, int a, int b, int c, int d) {
 
         if (str[a][b].contains("Queen")) {
-            if ((a == c || b == d) || (Math.abs(c - a) == Math.abs(d - b))) {
-                if (r.straight(str, a, b, c, d, i) == Math.abs(a - c)) {
-                    str[a][b] = "";
-                    str[c][d] = color + "Queen";
-                    return success;
-                }else if (r.diagonal(str, a, b, c, d) == Math.abs(a - c)) {
+            if (r.diagonal(str, a, b, c, d) == Math.abs(a - c)) {
+                if (Math.abs(c - a) == Math.abs(d - b)) {
                     str[a][b] = "";
                     str[c][d] = color + "Queen";
                     return success;
@@ -187,11 +183,29 @@ public class peace {
                     System.out.println("잘못된 위치입니다. 다시 두세요");
                     return fail;
                 }
-            } else {
-                System.out.println("갈 수 없는 위치입니다. 다시 두세요");
+            } else if (a == c) {
+                if (r.straight(str, a, b, c, d) == Math.abs(b - d)) {
+                    str[a][b] = "";
+                    str[c][d] = color + "Queen";
+                    return success;
+                } else {
+                    System.out.println("잘못된 위치입니다. 다시 두세요");
+                    return fail;
+                }
+            } else if (b == d) {
+                if (r.straight(str, a, b, c, d) == Math.abs(a - c)) {
+                    str[a][b] = "";
+                    str[c][d] = color + "Queen";
+                    return success;
+                } else {
+                    System.out.println("잘못된 위치입니다. 다시 두세요");
+                    return fail;
+                }
+            } else
+                System.out.println("잘못된 위치입니다. 다시 두세요");
                 return fail;
-            }
-        } else
+        }
+        else
             return success;
     }
 }

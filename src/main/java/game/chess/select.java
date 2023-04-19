@@ -4,7 +4,7 @@ public class select {
     public int a_select(String str) {
 
         char a_ch = str.charAt(1);
-        int a = a_ch - '0';                    //세로
+        int a = a_ch - 48;                    //세로
         return a;
     }
 

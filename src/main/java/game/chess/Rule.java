@@ -84,11 +84,11 @@ public class Rule {
                 w_big = b;
                 w_small = d;
 
-            for (int i = c_small, j = w_small; i < c_big && j < w_big; i++, j++) {
-                if (str[i][j].equals(""))
-                    count++;
+                for (int i = c_small, j = w_small; i < c_big && j < w_big; i++, j++) {
+                    if (str[i][j].equals(""))
+                        count++;
 
-            }
+                }
             }
         }
 
@@ -97,65 +97,43 @@ public class Rule {
     }
 
 
-
-    public int straight(String[][] str, int a, int b, int c, int d, int e) {
+    public int straight(String[][] str, int a, int b, int c, int d) {
         int big, small;
         int count = 0;
-        if (e % 2 == 0) {   //백
 
-            if (a == c) {
-                if (b > d) {
-                    big = b;
-                    small = d;
-                } else {
-                    big = d;
-                    small = b;
-                }
-                for (int i = big; i > small; i--) {
+        if (a == c) {
+            if (b > d) {
+                big = b;
+                small = d;
+                for (int i = small; i < big; i++) {
                     if (str[a][i].equals(""))
                         count++;
                 }
             } else {
-                if (a > c) {
-                    big = a;
-                    small = c;
-                } else {
-                    big = c;
-                    small = a;
+                big = d;
+                small = b;
+                for (int i = big; i > small; i--) {
+                    if (str[a][i].equals(""))
+                        count++;
                 }
+            }
+        } else {
+            if (a > c) {
+                big = a;
+                small = c;
                 for (int i = small; i < big; i++) {
                     if (str[i][b].equals(""))
                         count++;
                 }
-            }
-            return count;
-        } else {
-            if (a == c) {
-                if (b > d) {
-                    big = b;
-                    small = d;
-                } else {
-                    big = d;
-                    small = b;
-                }
-                for (int i = big; i > small; i--) {
-                    if (str[a][i].equals(""))
-                        count++;
-                }
             } else {
-                if (a > c) {
-                    big = a;
-                    small = c;
-                } else {
-                    big = c;
-                    small = a;
-                }
+                big = c;
+                small = a;
                 for (int i = big; i > small; i--) {
                     if (str[i][b].equals(""))
                         count++;
                 }
             }
-            return count;
         }
+        return count;
     }
 }
