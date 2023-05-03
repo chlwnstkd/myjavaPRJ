@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class linklist {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        LinkedList<Integer> list = new LinkedList<Integer>();
+        LinkedList<Integer> list = new LinkedList<>();
 
         for (int i = 0; i < 5; i++) {
             list.add(s.nextInt());
@@ -22,8 +22,9 @@ public class linklist {
         }
         for(int i=0; i<5; i++){
             for (int j =i+1; j< list.size(); j++) {
-                if (list.get(i) == list.get(j)) {
+                if (list.get(i).equals(list.get(j))) {
                     list.remove(j);
+                    j--;
                 }
             }
         }
