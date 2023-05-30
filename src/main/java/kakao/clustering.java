@@ -34,25 +34,34 @@ public class clustering {
         for(int i = 0; i < st1.length-1; i++) {
             if((st1[i] <91 && st1[i] > 64) && (st1[i+1] <91 && st1[i+1] > 64)) {
                 sr1.add(st1[i] + "" + st1[i+1]);
+            }else if((st1[i] <91 && st1[i] > 64) && (st1[i+1] <58 && st1[i+1] > 47)) {
+                sr1.add(st1[i] + "" + st1[i+1]);
+            }else if((st1[i] <58 && st1[i] > 47) && (st1[i+1] <91 && st1[i+1] > 64)) {
+                sr1.add(st1[i] + "" + st1[i+1]);
             }
         }
         for(int i = 0; i < st2.length-1; i++) {
             if((st2[i] <91 && st2[i] > 64) && (st2[i+1] <91 && st2[i+1] > 64)) {
+                sr2.add(st2[i] + "" + st2[i+1]);
+            }else if((st2[i] <91 && st2[i] > 64) && (st2[i+1] <58 && st2[i+1] > 47)) {
+                sr2.add(st2[i] + "" + st2[i+1]);
+            }else if((st2[i] <58 && st2[i] > 47) && (st2[i+1] <91 && st2[i+1] > 64)) {
                 sr2.add(st2[i] + "" + st2[i+1]);
             }
         }
         int count = 0;
         int size1 = sr1.size();
         int size2 = sr2.size();
-        for(int i = 0; i < size1; i++) {
-            for(int j = 0; j < size2; j++) {
-                if (sr1.equals(sr2)){
+        String[] result1 = sr1.toArray(new String[0]);
+        String[] result2 = sr2.toArray(new String[0]);
+        for (int i = 0; i<size1; i++) {
+            for (int j = 0 ; j< size2; j++) {
+                if (result1[i].equals(result2[j])) {
                     count++;
-                    break;
                 }
             }
         }
         float result = count/(float)(size1+size2-count);
-        System.out.println((int)result*65536);
+        System.out.println((int)(result*65536));
     }
 }
