@@ -62,6 +62,9 @@ public class clustering {
             }
         }
         float result = count/(float)(size1+size2-count);
+        if(sr1.isEmpty()&&sr2.isEmpty()){
+            result = 1;
+        }
         System.out.println((int)(result*65536));
     }
 }
